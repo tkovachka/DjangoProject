@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phones Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/phones/">All Phones</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/phones/">Home</a>
+            </li>
+        </ul>
+        <span class="navbar-text">
+                <a class="nav-link active" href="/phones/add">Add New Phone</a>
+        </span>
+    </div>
+</nav>
+<div class="container text-center w-75 shadow p-3 mb-5 bg-white">
+    <div>
+        {% block content %} {% endblock %}
+    </div>
+    <div>
+        {% block end_content %} {% endblock %}
+    </div>
+</div>
+</body>
+<footer class="container m-5 text-center" style="margin:auto">
+    <hr>
+    <div>Application made by Teodora Kovachka</div>
+    <div>For the subject Design of the Interaction Human-Computer at FCSE</div>
+</footer>
+</html>

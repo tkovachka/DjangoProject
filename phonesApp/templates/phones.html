@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>All Mobile Phones</h1>
+    <div class="row h-100">
+        {% for phone in phones %}
+            <div class="col-3 mb-2">
+                <div class="card">
+                    <img src="{{ phone.image.url }}" class="card-img-top p-3" alt="..." style="height: 300px; width: 250px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ phone.model }}</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">{{ phone.manufacturer.name }}</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ phone.year }}</li>
+                            <li class="list-group-item">${{ phone.price }}</li>
+                            <li class="list-group-item">
+                                <a class="btn btn-outline-dark"
+                                   href="{% url 'phone details' phone.id %}">Details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

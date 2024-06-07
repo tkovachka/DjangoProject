@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+<body>
+{% block content %}
+    <div class="row">
+        <div class="col-6">
+            <img src="{{ phone.image.url }}" alt="..." style="height: 600px"/>
+        </div>
+        <div class="col-6">
+            <h2 class="mb-5">Details for {{ phone.model }}</h2>
+            <table class="table table-striped col-6">
+                <tr>
+                    <th>Manufacturer</th>
+                    <td>{{ phone.manufacturer.name }}</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>{{ phone.model }}</td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td>{{ phone.year }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{{ phone.type }}</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>{{ phone.price }}</td>
+                </tr>
+                <tr>
+                    <th>Is New</th>
+                    <td>{{ phone.isNew }}</td>
+                </tr>
+                <tr>
+                    <th>Actions</th>
+                    <td>
+                        <div class="form-group">
+                            <a class="btn btn-outline-dark" href="/phones/">Back To Home</a>
+                            <a class="btn btn-outline-info" href="{% url "phone edit" phone.id %}">Edit</a>
+                            <a class="btn btn-danger" href="{% url "phone delete" phone.id %}">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
